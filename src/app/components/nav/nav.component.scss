@@ -1,0 +1,17 @@
+::ng-deep.mdc-list-item__primary-text {
+    color: var(--white)!important;
+}
+
+.sidenav {
+    background-color: var(--purple);
+    width: 200px;
+}
+
+.sidenav a {
+    color: var(--white);
+}
+
+.content {
+    padding: 16px;
+    background-color: var(--white);
+}
