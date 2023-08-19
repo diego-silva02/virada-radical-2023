@@ -10,6 +10,8 @@ import { ParticipantsCrudComponent } from './views/participants-crud/participant
 import { ParticipantsReadComponent } from './components/participants/participants-read/participants-read.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { PhoneNumberPipe } from './shared/pipes/phone-number.pipe';
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -28,7 +30,8 @@ import {MatInputModule} from '@angular/material/input';
     NavComponent,
     HomeComponent,
     ParticipantsCrudComponent,
-    ParticipantsReadComponent
+    ParticipantsReadComponent,
+    PhoneNumberPipe
   ],
   imports: [
     BrowserModule,

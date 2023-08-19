@@ -1,7 +1,7 @@
 export interface Participant {
     id?: number,
     name: string,
-    foneNumber?: string,
+    phoneNumber?: string,
     instagram?: string,
     parentsContact?: string,
     age?: number,

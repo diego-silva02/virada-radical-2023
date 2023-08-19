@@ -15,7 +15,7 @@ export class ParticipantsReadComponent {
     {
       id: 1,
       name: "Robert Costa",
-      foneNumber: "085940028922",
+      phoneNumber: "085940028922",
       instagram: "@johndoe",
       parentsContact: "9876543210",
       age: 20,
@@ -28,7 +28,7 @@ export class ParticipantsReadComponent {
     }, {
       id: 2,
       name: "Jane Barros",
-      foneNumber: "085989224002",
+      phoneNumber: "085989224002",
       instagram: "@janesmith",
       parentsContact: "5551234567",
       age: 16,
@@ -40,7 +40,7 @@ export class ParticipantsReadComponent {
     },
   ];
 
-  displayedColumns: string[] = ['name','age', 'foneNumber', 'wasPaid'];
+  displayedColumns: string[] = ['name','age', 'phoneNumber', 'wasPaid'];
   dataSource = new MatTableDataSource(this.participantsList);
 
   applyFilter(event: Event) {
