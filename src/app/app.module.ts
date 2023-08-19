@@ -14,6 +14,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { ParticipantsReadComponent } from './components/participants/participants-read/participants-read.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MatButtonModule } from '@angular/material/button';
     HeaderComponent,
     NavComponent,
     HomeComponent,
-    ParticipantsCrudComponent
+    ParticipantsCrudComponent,
+    ParticipantsReadComponent
   ],
   imports: [
     BrowserModule,
