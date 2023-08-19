@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
+import { ParticipantsCrudComponent } from './views/participants-crud/participants-crud.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { MatCardModule } from '@angular/material/card';
     AppComponent,
     HeaderComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    ParticipantsCrudComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +32,7 @@ import { MatCardModule } from '@angular/material/card';
     MatSidenavModule,
     MatListModule,
     MatCardModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
