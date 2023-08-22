@@ -7,13 +7,13 @@
     <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Nome </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
     </ng-container>
   
     <!-- Age Column -->
     <ng-container matColumnDef="age">
       <th mat-header-cell *matHeaderCellDef> Idade </th>
-      <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+      <td mat-cell *matCellDef="let element"> {{ element.age }} </td>
     </ng-container>
   
     <!-- Phone Number Column -->
@@ -25,7 +25,7 @@
     <!-- Was Paid Column -->
     <ng-container matColumnDef="wasPaid">
         <th mat-header-cell *matHeaderCellDef> Pago </th>
-        <td mat-cell *matCellDef="let element"> {{element.wasPaid}} </td>
+        <td mat-cell *matCellDef="let element"> {{ element.wasPaid == true ? 'Sim' : 'Não' }} </td>
       </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -33,6 +33,6 @@
   
     <!-- Row shown when there is no matching data. -->
     <tr class="mat-row" *matNoDataRow>
-      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      <td class="mat-cell" colspan="4">No data matching the filter "{{ input.value }}"</td>
     </tr>
 </table>

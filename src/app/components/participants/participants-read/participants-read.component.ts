@@ -40,7 +40,7 @@ export class ParticipantsReadComponent {
     },
   ];
 
-  displayedColumns: string[] = ['name','age', 'phoneNumber', 'wasPaid'];
+  displayedColumns: string[] = ['name', 'age', 'phoneNumber', 'wasPaid'];
   dataSource = new MatTableDataSource(this.participantsList);
 
   applyFilter(event: Event) {
