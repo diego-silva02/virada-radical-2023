@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
 import { ParticipantsCrudComponent } from './views/participants-crud/participants-crud.component';
 import { ParticipantsReadComponent } from './components/participants/participants-read/participants-read.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PhoneNumberPipe } from './shared/pipes/phone-number.pipe';
 
@@ -37,6 +38,7 @@ import {MatInputModule} from '@angular/material/input';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
