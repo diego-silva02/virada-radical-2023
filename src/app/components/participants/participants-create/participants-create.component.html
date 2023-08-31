@@ -1,1 +1,64 @@
-<p>participants-create works!</p>
+<mat-card class="container mt-4">
+    <mat-card-title class="create-title">Novo Participante</mat-card-title>
+
+    <form [formGroup]="formGroup" class="pt-4">
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Nome*" formControlName="name">
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Número de telefone" formControlName="phoneNumber">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Cpf" formControlName="cpf">
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="RG" formControlName="rg">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Instagram" formControlName="instagram">
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Contato dos pais" formControlName="parentsContact">
+                </mat-form-field>
+            </div>
+        </div>
+        
+        
+        <!-- <div class="col-6">
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Idade" formControlName="age">
+            </mat-form-field>
+        </div> -->
+
+
+        <!-- 
+            wasPaid: [false, Validators.required],
+            valuePaid: [null],
+            foodRestriction: [''],
+            otherThings: [''] 
+        -->
+    </form>
+
+    <div class="row d-flex justify-content-end">
+        <button mat-raised-button class="btn-save col-1" (click)="createParticipant()" color="primary">Salvar</button>
+        <button mat-raised-button class="btn-back col-1" (click)="back()">Voltar</button>
+    </div>
+</mat-card>
