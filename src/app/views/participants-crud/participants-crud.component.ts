@@ -9,8 +9,4 @@ export class ParticipantsCrudComponent {
 
   constructor() {}
 
-  navigateToParticipantCreate(): void {
-    console.log('Navegar para tela de criação de participantes');
-  }
-
 }

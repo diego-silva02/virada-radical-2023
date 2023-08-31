@@ -10,6 +10,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
 import { ParticipantsCrudComponent } from './views/participants-crud/participants-crud.component';
 import { ParticipantsReadComponent } from './components/participants/participants-read/participants-read.component';
+import { ParticipantsCreateComponent } from './components/participants/participants-create/participants-create.component';
 
 import { PhoneNumberPipe } from './shared/pipes/phone-number.pipe';
 
@@ -21,7 +22,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {MatInputModule} from '@angular/material/input';
     HomeComponent,
     ParticipantsCrudComponent,
     ParticipantsReadComponent,
-    PhoneNumberPipe
+    ParticipantsCreateComponent,
+    PhoneNumberPipe,
   ],
   imports: [
     BrowserModule,
