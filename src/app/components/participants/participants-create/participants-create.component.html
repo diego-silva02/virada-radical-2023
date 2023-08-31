@@ -10,7 +10,7 @@
             </div>
             <div class="col-6">
                 <mat-form-field class="w-100">
-                    <input matInput placeholder="Número de telefone" formControlName="phoneNumber">
+                    <input matInput placeholder="Número de telefone" formControlName="phoneNumber" prefix="(085) " mask="00000-0000">
                 </mat-form-field>
             </div>
         </div>
@@ -18,12 +18,12 @@
         <div class="row">
             <div class="col-6">
                 <mat-form-field class="w-100">
-                    <input matInput placeholder="Cpf" formControlName="cpf">
+                    <input matInput placeholder="Cpf" formControlName="cpf" [dropSpecialCharacters]="false" mask="000.000.000-00">
                 </mat-form-field>
             </div>
             <div class="col-6">
                 <mat-form-field class="w-100">
-                    <input matInput placeholder="RG" formControlName="rg">
+                    <input matInput placeholder="RG" formControlName="rg" [dropSpecialCharacters]="false" mask="000000-0||0000000-0||00000000-0||000000000-0||0000000000-0||00000000000-0">
                 </mat-form-field>
             </div>
         </div>
@@ -44,7 +44,7 @@
         <div class="row">
             <div class="col-2">
                 <mat-form-field class="w-100">
-                    <input matInput placeholder="Idade" formControlName="age">
+                    <input matInput placeholder="Idade" formControlName="age" mask="00">
                 </mat-form-field>
             </div>
         </div>
@@ -56,19 +56,21 @@
 
         <div class="row" *ngIf="formGroup.value.wasPaid">
             <mat-form-field class="w-100">
-                <input matInput placeholder="Restrição alimentícia" formControlName="foodRestriction">
-            </mat-form-field>
-        </div>
-        <div class="row" *ngIf="hasFoodRestriction">
-            <mat-form-field class="w-100">
-                <input matInput placeholder="Qual valor foi pago?" formControlName="valuePaid">
+                <input matInput placeholder="Qual valor foi pago?" formControlName="valuePaid" [dropSpecialCharacters]="false" prefix="R$ " mask="000||000,00">
             </mat-form-field>
         </div>
 
-        <!-- 
-            valuePaid: [null],
-            otherThings: [''] 
-        -->
+        <div class="row" *ngIf="hasFoodRestriction">
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Restrição alimentícia" formControlName="foodRestriction">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Outras observações" formControlName="otherThings">
+            </mat-form-field>
+        </div>
     </form>
 
     <div class="row d-flex justify-content-end py-2">

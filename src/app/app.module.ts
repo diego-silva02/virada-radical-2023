@@ -13,6 +13,7 @@ import { ParticipantsReadComponent } from './components/participants/participant
 import { ParticipantsCreateComponent } from './components/participants/participants-create/participants-create.component';
 
 import { PhoneNumberPipe } from './shared/pipes/phone-number.pipe';
+import { NgxMaskDirective, NgxMaskPipe, provideEnvironmentNgxMask } from 'ngx-mask';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -53,8 +54,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatCheckboxModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxMaskDirective,
+    NgxMaskPipe
   ],
-  providers: [],
+  providers: [
+    provideEnvironmentNgxMask(),
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
