@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environment/environment';
 import { Injectable } from '@angular/core';
-import { catchError, map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Participant } from '../shared/models/participant.model';
 
 @Injectable({

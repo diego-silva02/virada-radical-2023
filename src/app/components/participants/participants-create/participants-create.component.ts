@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ParticipantService } from 'src/app/services/participant.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,6 +15,7 @@ export class ParticipantsCreateComponent {
 
   constructor(
     private formBuilder: FormBuilder,
+    private participantsService: ParticipantService,
     private router: Router
     ) {
     this.formGroup = this.formBuilder.group({
@@ -36,7 +38,16 @@ export class ParticipantsCreateComponent {
   }
   
   createParticipant(): void {
-    console.log(this.formGroup.value);
+    this.formGroup.value.phoneNumber = '085' + this.formGroup.value.phoneNumber;
+    this.participantsService.create(this.formGroup.value).subscribe({
+      next: () => {
+        console.log('Deu certo');
+        this.router.navigate(['/participantes/tabela']);
+      },
+      error: (ex: any) => {
+        console.log('Deu errado', ex);
+      }
+    });
   }
 
   back(): void {
