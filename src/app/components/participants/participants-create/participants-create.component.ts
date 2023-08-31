@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class ParticipantsCreateComponent {
 
   formGroup!: FormGroup;
+  hasFoodRestriction: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -23,11 +24,15 @@ export class ParticipantsCreateComponent {
       age: [null],
       cpf: [''],
       rg: [''],
-      wasPaid: [false, Validators.required],
-      valuePaid: [0],
+      wasPaid: [false],
+      valuePaid: [null],
       foodRestriction: [''],
       otherThings: ['']
     })
+  }
+
+  changeValuePaid(): void {
+    this.hasFoodRestriction = !this.hasFoodRestriction;
   }
   
   createParticipant(): void {
@@ -35,6 +40,6 @@ export class ParticipantsCreateComponent {
   }
 
   back(): void {
-    this.router.navigate(['/participants/tabela'])
+    this.router.navigate(['/participantes/tabela']);
   }
 }

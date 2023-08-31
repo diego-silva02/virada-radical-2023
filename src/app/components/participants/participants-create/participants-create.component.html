@@ -41,23 +41,37 @@
             </div>
         </div>
         
-        
-        <!-- <div class="col-6">
-            <mat-form-field class="w-100">
-                <input matInput placeholder="Idade" formControlName="age">
-            </mat-form-field>
-        </div> -->
+        <div class="row">
+            <div class="col-2">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Idade" formControlName="age">
+                </mat-form-field>
+            </div>
+        </div>
 
+        <div class="row pb-3">
+            <mat-checkbox formControlName="wasPaid">Foi pago?</mat-checkbox>
+            <mat-checkbox (change)="changeValuePaid()">Possui restrição alimentar?</mat-checkbox>
+        </div>
+
+        <div class="row" *ngIf="formGroup.value.wasPaid">
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Restrição alimentícia" formControlName="foodRestriction">
+            </mat-form-field>
+        </div>
+        <div class="row" *ngIf="hasFoodRestriction">
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Qual valor foi pago?" formControlName="valuePaid">
+            </mat-form-field>
+        </div>
 
         <!-- 
-            wasPaid: [false, Validators.required],
             valuePaid: [null],
-            foodRestriction: [''],
             otherThings: [''] 
         -->
     </form>
 
-    <div class="row d-flex justify-content-end">
+    <div class="row d-flex justify-content-end py-2">
         <button mat-raised-button class="btn-save col-1" (click)="createParticipant()" color="primary">Salvar</button>
         <button mat-raised-button class="btn-back col-1" (click)="back()">Voltar</button>
     </div>
