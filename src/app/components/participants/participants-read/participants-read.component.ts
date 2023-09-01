@@ -13,10 +13,14 @@ export class ParticipantsReadComponent implements OnInit {
   constructor(private participantsService: ParticipantService) {}
   
   participantsList: Participant[] = [];
-  displayedColumns: string[] = ['name', 'age', 'phoneNumber', 'wasPaid'];
+  displayedColumns: string[] = ['name', 'age', 'phoneNumber', 'wasPaid', 'actions'];
   dataSource = new MatTableDataSource(this.participantsList);
 
   ngOnInit(): void {
+    this.loadParticipants();
+  }
+
+  loadParticipants(): void {
     this.participantsService.read().subscribe(participants => {
       this.participantsList = participants;
       this.dataSource = new MatTableDataSource(this.participantsList);
@@ -26,5 +30,17 @@ export class ParticipantsReadComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  deleteParticipant(id: number): void {
+    this.participantsService.delete(id).subscribe({
+      next: () =>{
+        console.log('Deletado');
+        this.loadParticipants();
+       },
+       error: (ex) =>{
+        console.log(ex);
+       }
+    })
   }
 }

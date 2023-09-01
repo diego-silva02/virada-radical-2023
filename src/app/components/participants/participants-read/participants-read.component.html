@@ -26,13 +26,29 @@
     <ng-container matColumnDef="wasPaid">
         <th mat-header-cell *matHeaderCellDef> Pago </th>
         <td mat-cell *matCellDef="let element"> {{ element.wasPaid == true ? 'Sim' : 'Não' }} </td>
-      </ng-container>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Ações </th>
+      <td mat-cell *matCellDef="let element">
+        <!-- <img src="../../../assets/svg/pencil.svg" alt="pencil" class="click-button" (click)="editParticipant(element)"> -->
+        <a mwlConfirmationPopover
+        [popoverMessage]="'Deseja realmente apagar?'"
+        placement="top"
+        confirmText="Confirmar"
+        cancelText="Cancelar"
+        (confirm)="deleteParticipant(element.id)">
+          <img src="../../../../assets/svgs/trash.svg" alt="trash" class="mx-3 click-button">
+        </a>
+    </td>
+  </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   
     <!-- Row shown when there is no matching data. -->
     <tr class="mat-row" *matNoDataRow>
-      <td class="mat-cell" colspan="4">No data matching the filter "{{ input.value }}"</td>
+      <td class="mat-cell" colspan="4">Sem dados para o filtro correspondente "{{ input.value }}"</td>
     </tr>
 </table>

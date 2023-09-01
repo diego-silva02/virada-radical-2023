@@ -11,3 +11,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     --dark-green: #25B374;
     --white: #FFF;
 }
+
+.popover.top.popover-top.bs-popover-top.ng-star-inserted {
+    background-color: var(--white);
+}
+
+.btn.btn-block.btn-outline-secondary {
+    background-color: var(--white);
+    border: var(--purple) solid 1px;
+    color: var(--purple);
+}
+button.btn.btn-block.btn-success {
+    background-color: var(--purple);
+    border: var(--purple) solid 1px;
+    color: var(--white);
+}
+
+.popover .popover-arrow::after, .popover .popover-arrow::before {
+    border-style: none !important;
+}
