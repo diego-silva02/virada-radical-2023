@@ -5,7 +5,7 @@
         <input matInput (keyup)="applyFilter($event)" placeholder="Digite aqui o filtro" #input>
     </mat-form-field>
   </div>
-  
+
   <!-- redirect to create participant component -->
   <div class="col-2">
     <button mat-raised-button class="participants-button w-100" routerLink="/participantes/novo">Novo Participante</button>
@@ -43,7 +43,7 @@
       <td mat-cell *matCellDef="let element">
         <img src="../../../../assets/svgs/pencil.svg" alt="pencil" class="click-button" (click)="editParticipant(element)" role="button">
         <a mwlConfirmationPopover
-        [popoverMessage]="'Deseja realmente apagar?'"
+        [popoverMessage]="'Deseja realmente remover?'"
         placement="top"
         confirmText="Confirmar"
         cancelText="Cancelar"

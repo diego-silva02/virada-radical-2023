@@ -21,7 +21,7 @@ export class ParticipantService {
     return this._http.get<Participant[]>(`${this.url}`);
   }
 
-  readById(id: number): Observable<Participant> {
+  readById(id: string | null): Observable<Participant> {
     return this._http.get<Participant>(`${this.url}/${id}`);
   }
 

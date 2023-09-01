@@ -1,1 +1,80 @@
-<p>participants-edit works!</p>
+<mat-card class="container mt-4">
+    <mat-card-title class="edit-title">Editar Participante</mat-card-title>
+
+    <form [formGroup]="formGroup" class="pt-4">
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Nome*" formControlName="name">
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Número de telefone" formControlName="phoneNumber" prefix="(085) " mask="00000-0000">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Cpf" formControlName="cpf" [dropSpecialCharacters]="false" mask="000.000.000-00">
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="RG" formControlName="rg" [dropSpecialCharacters]="false" mask="000000-0||0000000-0||00000000-0||000000000-0||0000000000-0||00000000000-0">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Instagram" formControlName="instagram">
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Contato dos pais" formControlName="parentsContact">
+                </mat-form-field>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-2">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Idade" formControlName="age" mask="00">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row pb-3">
+            <mat-checkbox formControlName="wasPaid">Foi pago?</mat-checkbox>
+            <mat-checkbox (change)="changeValuePaid()">Possui restrição alimentar?</mat-checkbox>
+        </div>
+
+        <div class="row" *ngIf="formGroup.value.wasPaid">
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Qual valor foi pago?" formControlName="valuePaid" [dropSpecialCharacters]="false" prefix="R$ " mask=" 000||000||000,00">
+            </mat-form-field>
+        </div>
+
+        <div class="row" *ngIf="hasFoodRestriction">
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Restrição alimentícia" formControlName="foodRestriction">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Outras observações" formControlName="otherThings">
+            </mat-form-field>
+        </div>
+    </form>
+
+    <div class="row d-flex justify-content-end py-2">
+        <button mat-raised-button class="btn-save col-1" (click)="editParticipant()" color="primary">Salvar</button>
+        <button mat-raised-button class="btn-back col-1" (click)="back()">Voltar</button>
+    </div>
+</mat-card>

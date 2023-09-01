@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { ParticipantService } from 'src/app/services/participant.service';
 import { Participant } from 'src/app/shared/models/participant.model';
 
@@ -10,7 +11,10 @@ import { Participant } from 'src/app/shared/models/participant.model';
 })
 export class ParticipantsReadComponent implements OnInit {
 
-  constructor(private participantsService: ParticipantService) {}
+  constructor(
+    private participantsService: ParticipantService,
+    private router: Router
+  ) { }
   
   participantsList: Participant[] = [];
   displayedColumns: string[] = ['name', 'age', 'phoneNumber', 'wasPaid', 'actions'];
@@ -33,7 +37,7 @@ export class ParticipantsReadComponent implements OnInit {
   }
 
   editParticipant(participant: Participant): void {
-    console.log(participant);
+    this.router.navigate([`/participantes/editar/${participant.id}`]);
   }
 
   deleteParticipant(id: number): void {
