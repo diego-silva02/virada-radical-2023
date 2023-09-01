@@ -32,6 +32,10 @@ export class ParticipantsReadComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  editParticipant(participant: Participant): void {
+    console.log(participant);
+  }
+
   deleteParticipant(id: number): void {
     this.participantsService.delete(id).subscribe({
       next: () =>{
