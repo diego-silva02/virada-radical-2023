@@ -1,7 +1,16 @@
-<mat-form-field class="pt-4 w-100">
-    <mat-label>Filtro</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Digite aqui o filtro" #input>
-</mat-form-field>
+<div class="row">
+  <div class="col-10">
+    <mat-form-field class="pt-4 w-100">
+        <mat-label>Filtro</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Digite aqui o filtro" #input>
+    </mat-form-field>
+  </div>
+  
+  <!-- redirect to create participant component -->
+  <div class="col-2">
+    <button mat-raised-button class="participants-button w-100" routerLink="/participantes/novo">Novo Participante</button>
+  </div>
+</div>
   
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <!-- Name Column -->

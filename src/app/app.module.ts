@@ -26,6 +26,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
+import { ParticipantsEditComponent } from './components/participants/participants-edit/participants-edit.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
     ParticipantsReadComponent,
     ParticipantsCreateComponent,
     PhoneNumberPipe,
+    ParticipantsEditComponent,
   ],
   imports: [
     BrowserModule,
