@@ -5,6 +5,7 @@ import { ParticipantsCrudComponent } from './views/participants-crud/participant
 import { ParticipantsReadComponent } from './components/participants/participants-read/participants-read.component';
 import { ParticipantsCreateComponent } from './components/participants/participants-create/participants-create.component';
 import { ParticipantsEditComponent } from './components/participants/participants-edit/participants-edit.component';
+import { DonationsCrudComponent } from './views/donations-crud/donations-crud.component';
 
 const routes: Routes = [{
     path: "",
@@ -14,7 +15,9 @@ const routes: Routes = [{
     { path: "tabela", component: ParticipantsReadComponent },
     { path: "novo", component: ParticipantsCreateComponent },
     { path: "editar/:id", component: ParticipantsEditComponent }
-  ]}
+  ]},
+  { path: "doacoes", component: DonationsCrudComponent
+  }
 ];
 
 @NgModule({
