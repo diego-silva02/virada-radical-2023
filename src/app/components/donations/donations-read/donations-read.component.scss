@@ -1,0 +1,14 @@
+.donations-button {
+    margin-top: 25px;
+    color: var(--white)!important;
+    background-color: var(--heliotrope)!important;
+}
+
+tr > th {
+    color: var(--white)!important;
+    background-color:var(--heliotrope)!important;
+}
+
+th.mat-mdc-header-cell.mdc-data-table__header-cell.cdk-header-cell.cdk-column-actions.mat-column-actions.ng-star-inserted {
+    width: 15%;
+}

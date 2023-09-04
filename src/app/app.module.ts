@@ -28,6 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { ParticipantsEditComponent } from './components/participants/participants-edit/participants-edit.component';
 import { DonationsCrudComponent } from './views/donations-crud/donations-crud.component';
+import { DonationsReadComponent } from './components/donations/donations-read/donations-read.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { DonationsCrudComponent } from './views/donations-crud/donations-crud.co
     PhoneNumberPipe,
     ParticipantsEditComponent,
     DonationsCrudComponent,
+    DonationsReadComponent,
   ],
   imports: [
     BrowserModule,
