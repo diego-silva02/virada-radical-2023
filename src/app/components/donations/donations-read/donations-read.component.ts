@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { DonationService } from 'src/app/services/donation.service';
 import { Donation } from 'src/app/shared/models/donation.model';
+import { DonationsCreateModalComponent } from '../donations-create-modal/donations-create-modal.component';
 
 @Component({
   selector: 'app-donations-read',
@@ -13,6 +15,7 @@ export class DonationsReadComponent {
 
   constructor(
     private donationService: DonationService,
+    public dialog: MatDialog,
     private router: Router
   ) { }
   
@@ -34,6 +37,14 @@ export class DonationsReadComponent {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  createDonation(): void {
+    const dialog = this.dialog.open(DonationsCreateModalComponent);
+
+    dialog.afterClosed().subscribe(() => {
+      this.loadDonations();
+    })
   }
 
   editDonation(donation: Donation): void {

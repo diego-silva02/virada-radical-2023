@@ -11,6 +11,9 @@ import { HomeComponent } from './views/home/home.component';
 import { ParticipantsCrudComponent } from './views/participants-crud/participants-crud.component';
 import { ParticipantsReadComponent } from './components/participants/participants-read/participants-read.component';
 import { ParticipantsCreateComponent } from './components/participants/participants-create/participants-create.component';
+import { ParticipantsEditComponent } from './components/participants/participants-edit/participants-edit.component';
+import { DonationsCrudComponent } from './views/donations-crud/donations-crud.component';
+import { DonationsReadComponent } from './components/donations/donations-read/donations-read.component';
 
 import { PhoneNumberPipe } from './shared/pipes/phone-number.pipe';
 import { NgxMaskDirective, NgxMaskPipe, provideEnvironmentNgxMask } from 'ngx-mask';
@@ -24,12 +27,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
-import { ParticipantsEditComponent } from './components/participants/participants-edit/participants-edit.component';
-import { DonationsCrudComponent } from './views/donations-crud/donations-crud.component';
-import { DonationsReadComponent } from './components/donations/donations-read/donations-read.component';
-
+import { DonationsCreateModalComponent } from './components/donations/donations-create-modal/donations-create-modal.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { DonationsReadComponent } from './components/donations/donations-read/do
     ParticipantsEditComponent,
     DonationsCrudComponent,
     DonationsReadComponent,
+    DonationsCreateModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +61,7 @@ import { DonationsReadComponent } from './components/donations/donations-read/do
     MatTableModule,
     MatInputModule,
     MatCheckboxModule,
+    MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
     NgxMaskDirective,
