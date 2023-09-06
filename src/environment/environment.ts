@@ -3,5 +3,6 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 
 export const environment = {
-    url: 'http://localhost:3000'
+    url: 'https://json-virada-2023.vercel.app'
+    // url: 'http://localhost:3000'
 }
