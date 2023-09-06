@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ParticipantService } from 'src/app/services/participant.service';
 import { Router } from '@angular/router';
+import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
   selector: 'app-participants-create',
@@ -16,7 +17,8 @@ export class ParticipantsCreateComponent {
   constructor(
     private formBuilder: FormBuilder,
     private participantsService: ParticipantService,
-    private router: Router
+    private router: Router,
+    public alertService: AlertService
     ) {
     this.formGroup = this.formBuilder.group({
       name: ['', Validators.required],
@@ -41,11 +43,12 @@ export class ParticipantsCreateComponent {
     this.formGroup.value.phoneNumber = '085' + this.formGroup.value.phoneNumber;
     this.participantsService.create(this.formGroup.value).subscribe({
       next: () => {
-        console.log('Deu certo');
+        this.alertService.showMessage('Participante adicionado, amém <3', 'success');
         this.router.navigate(['/participantes/tabela']);
       },
       error: (ex: any) => {
-        console.log('Deu errado', ex);
+        this.alertService.showMessage('Um erro ocorreu, Vish!', 'error');
+        console.log(ex);
       }
     });
   }

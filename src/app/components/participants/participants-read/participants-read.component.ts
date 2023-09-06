@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { AlertService } from 'src/app/services/alert.service';
 import { ParticipantService } from 'src/app/services/participant.service';
 import { Participant } from 'src/app/shared/models/participant.model';
 
@@ -13,7 +14,8 @@ export class ParticipantsReadComponent implements OnInit {
 
   constructor(
     private participantsService: ParticipantService,
-    private router: Router
+    private router: Router,
+    public alertService: AlertService
   ) { }
   
   participantsList: Participant[] = [];
@@ -42,11 +44,12 @@ export class ParticipantsReadComponent implements OnInit {
 
   deleteParticipant(id: number): void {
     this.participantsService.delete(id).subscribe({
-      next: () =>{
-        console.log('Deletado');
+      next: () => {
+        this.alertService.showMessage('Participante removido, rezemos mais!', 'success');
         this.loadParticipants();
        },
-       error: (ex) =>{
+       error: (ex) => {
+        this.alertService.showMessage('Um erro ocorreu, Vish!', 'error');
         console.log(ex);
        }
     })

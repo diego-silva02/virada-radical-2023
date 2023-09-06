@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AlertService } from 'src/app/services/alert.service';
 import { ParticipantService } from 'src/app/services/participant.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class ParticipantsEditComponent implements OnInit {
     private formBuilder: FormBuilder,
     private participantsService: ParticipantService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public alertService: AlertService
   ) {
     this.formGroup = this.formBuilder.group({
       name: ['', Validators.required],
@@ -62,11 +64,12 @@ export class ParticipantsEditComponent implements OnInit {
     this.formGroup.value.phoneNumber = '085' + this.formGroup.value.phoneNumber;
     this.participantsService.update(this.formGroup.value.id, this.formGroup.value).subscribe({
       next: () => {
-        console.log('Deu certo');
+        this.alertService.showMessage('Participante editado, amém <3', 'success');
         this.router.navigate(['/participantes/tabela']);
       },
       error: (ex: any) => {
-        console.log('Deu errado', ex);
+        this.alertService.showMessage('Um erro ocorreu, Vish!', 'error');
+        console.log(ex);
       }
     });
   }
@@ -74,5 +77,4 @@ export class ParticipantsEditComponent implements OnInit {
   back(): void {
     this.router.navigate(['/participantes/tabela']);
   }
-
 }
