@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
-import { Router } from '@angular/router';
 import { DonationService } from 'src/app/services/donation.service';
 import { Donation } from 'src/app/shared/models/donation.model';
 import { DonationsCreateModalComponent } from '../donations-create-modal/donations-create-modal.component';
+import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
   selector: 'app-donations-read',
@@ -16,7 +16,7 @@ export class DonationsReadComponent {
   constructor(
     private donationService: DonationService,
     public dialog: MatDialog,
-    private router: Router
+    public alertService: AlertService
   ) { }
   
   donationsList: Donation[] = [];
@@ -54,10 +54,11 @@ export class DonationsReadComponent {
   deleteDonation(id: number): void {
     this.donationService.delete(id).subscribe({
       next: () =>{
-        console.log('Deletado');
+        this.alertService.showMessage('Doação removida, Poxa!', 'success');
         this.loadDonations();
        },
-       error: (ex) =>{
+       error: (ex) => {
+        this.alertService.showMessage('Um erro ocorreu, Vish!', 'error');
         console.log(ex);
        }
     })

@@ -14,6 +14,7 @@ import { ParticipantsCreateComponent } from './components/participants/participa
 import { ParticipantsEditComponent } from './components/participants/participants-edit/participants-edit.component';
 import { DonationsCrudComponent } from './views/donations-crud/donations-crud.component';
 import { DonationsReadComponent } from './components/donations/donations-read/donations-read.component';
+import { DonationsCreateModalComponent } from './components/donations/donations-create-modal/donations-create-modal.component';
 
 import { PhoneNumberPipe } from './shared/pipes/phone-number.pipe';
 import { NgxMaskDirective, NgxMaskPipe, provideEnvironmentNgxMask } from 'ngx-mask';
@@ -28,9 +29,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
-import { DonationsCreateModalComponent } from './components/donations/donations-create-modal/donations-create-modal.component';
+import { AlertComponent } from './components/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import { DonationsCreateModalComponent } from './components/donations/donations-
     DonationsCrudComponent,
     DonationsReadComponent,
     DonationsCreateModalComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +65,7 @@ import { DonationsCreateModalComponent } from './components/donations/donations-
     MatInputModule,
     MatCheckboxModule,
     MatDialogModule,
+    MatSnackBarModule,
     FormsModule,
     ReactiveFormsModule,
     NgxMaskDirective,

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <clipPath id="clip-button">
+      <rect width="16" height="16"/>
+    </clipPath>
+  </defs>
+  <g id="button" clip-path="url(#clip-button)">
+    <g id="Grupo_3407" data-name="Grupo 3407" transform="translate(14642.311 8612)">
+      <path id="error" d="M10.875-5.125v-5.333H9.125v5.333Zm-1.708,3.5A1.225,1.225,0,0,0,10-1.292a1.117,1.117,0,0,0,.812-.354,1.117,1.117,0,0,0,.354-.812,1.051,1.051,0,0,0-.354-.792A1.152,1.152,0,0,0,10-3.583a1.152,1.152,0,0,0-.812.333,1.051,1.051,0,0,0-.354.792A1.225,1.225,0,0,0,9.167-1.625ZM13.333-14,18-9.333v6.667L13.333,2H6.667L2-2.667V-9.333L6.667-14Z" transform="translate(-14644.311 -8598)" fill="#d5442d"/>
+    </g>
+  </g>
+</svg>

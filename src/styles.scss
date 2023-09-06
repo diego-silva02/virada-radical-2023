@@ -12,6 +12,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     --white: #FFF;
 }
 
+// popover styles
 .popover.top.popover-top.bs-popover-top.ng-star-inserted {
     background-color: var(--white);
 }
@@ -29,4 +30,15 @@ button.btn.btn-block.btn-success {
 
 .popover .popover-arrow::after, .popover .popover-arrow::before {
     border-style: none !important;
+}
+
+// snackbar styles
+.msg-success > .mdc-snackbar__surface {
+    background-color: var(--purple-buttons)!important;
+    font-size: 14px!important;
+}
+
+.msg-error > .mdc-snackbar__surface {
+    background-color: #FF5733!important;
+    font-size: 14px!important;
 }
