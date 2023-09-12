@@ -38,7 +38,9 @@ export class ParticipantsEditComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.participantsService.readById(id).subscribe(participant => {
+    this.participantsService.readById(id).subscribe((participant: any) => {
+      participant = participant[0]; // TODO: Remove this and update backend to give one result
+      
       this.formGroup = this.formBuilder.group({
         id: [participant.id],
         name: [participant.name, Validators.required],
