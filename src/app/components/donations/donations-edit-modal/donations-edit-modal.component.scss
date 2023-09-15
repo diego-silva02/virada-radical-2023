@@ -1,0 +1,40 @@
+.container {
+    width: 500px !important;
+}
+
+.tittle-img_close {
+    padding-right: 20px;
+}
+
+.tittle {
+    font-size: 22px;
+    color: var(--white);
+    background-color: var(--heliotrope);
+    padding: 20px 0px 10px 8px;
+    opacity: 1;
+    margin-bottom: 24px;
+}
+
+.properties {
+    padding: 0 10px 20px;
+}
+
+.properties-btns {
+    padding-right: 12px;
+}
+
+.properties-btns__save {
+    background-color: var(--purple-buttons)!important;
+    color: var(--white)!important;
+    
+    width: 100px;
+    margin-left: 12px;
+}
+
+.properties-btns__cancel {
+    background-color: var(--white);
+    color: var(--purple-buttons) !important;
+    border: var(--purple-buttons) solid 1px;
+    
+    width: 100px;
+}

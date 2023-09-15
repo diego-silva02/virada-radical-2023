@@ -5,6 +5,7 @@ import { DonationService } from 'src/app/services/donation.service';
 import { Donation } from 'src/app/shared/models/donation.model';
 import { DonationsCreateModalComponent } from '../donations-create-modal/donations-create-modal.component';
 import { AlertService } from 'src/app/services/alert.service';
+import { DonationsEditModalComponent } from '../donations-edit-modal/donations-edit-modal.component';
 
 @Component({
   selector: 'app-donations-read',
@@ -48,12 +49,16 @@ export class DonationsReadComponent {
   }
 
   editDonation(donation: Donation): void {
-    // this.router.navigate([`/Donationes/editar/${donation.id}`]);
+    const dialog = this.dialog.open(DonationsEditModalComponent, { data: donation });
+
+    dialog.afterClosed().subscribe(() => {
+      this.loadDonations();
+    })
   }
 
   deleteDonation(id: number): void {
     this.donationService.delete(id).subscribe({
-      next: () =>{
+      next: () => {
         this.alertService.showMessage('Doação removida, Poxa!', 'success');
         this.loadDonations();
        },

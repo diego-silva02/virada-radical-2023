@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row tittle">
+        <p class="col-11"> Adicionar doação </p>
+        <p class="col-1 tittle-img_close d-flex justify-content-end" [mat-dialog-close]="true">X</p>
+    </div>
+
+    <div class="properties">
+        <form [formGroup]="formGroup">
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="w-100">
+                        <mat-label>Doação</mat-label>
+                        <input matInput placeholder="Digite o que foi doado" formControlName="description">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="w-100">
+                        <mat-label>Quantidade</mat-label>
+                        <input matInput placeholder="Digite a quantidade" formControlName="amount">
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+
+        <div class="row properties-btns d-flex justify-content-end pt-4">
+            <button mat-button class="properties-btns__cancel col-1" (click)="close()">Cancelar</button>
+            <button mat-button class="properties-btns__save col-1" (click)="saveDonation()">Salvar</button>
+        </div>
+    </div>
+</div>
