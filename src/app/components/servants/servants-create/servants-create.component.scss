@@ -1,0 +1,13 @@
+.create-title {
+    color: var(--purple);
+}
+
+.btn-back {
+    margin: 0 12px;
+    color: var(--purple-buttons) !important;
+    border: var(--purple-buttons) solid 1px;
+}
+
+::ng-deepmat-option > span.mdc-list-item__primary-text {
+    color: var(--black)!important;
+}

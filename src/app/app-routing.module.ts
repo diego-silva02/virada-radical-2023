@@ -9,6 +9,7 @@ import { DonationsCrudComponent } from './views/donations-crud/donations-crud.co
 import { DonationsReadComponent } from './components/donations/donations-read/donations-read.component';
 import { ServantsCrudComponent } from './views/servants-crud/servants-crud.component';
 import { ServantsReadComponent } from './components/servants/servants-read/servants-read.component';
+import { ServantsCreateComponent } from './components/servants/servants-create/servants-create.component';
 
 const routes: Routes = [{
     path: "",
@@ -23,7 +24,8 @@ const routes: Routes = [{
     { path: "tabela", component: DonationsReadComponent }
   ]},
   { path: "servos", component: ServantsCrudComponent, children: [
-    { path: "tabela", component: ServantsReadComponent }
+    { path: "tabela", component: ServantsReadComponent },
+    { path: "novo", component: ServantsCreateComponent },
   ]}
 ];
 

@@ -18,6 +18,7 @@ import { DonationsCreateModalComponent } from './components/donations/donations-
 import { DonationsEditModalComponent } from './components/donations/donations-edit-modal/donations-edit-modal.component';
 import { ServantsCrudComponent } from './views/servants-crud/servants-crud.component';
 import { ServantsReadComponent } from './components/servants/servants-read/servants-read.component';
+import { ServantsCreateComponent } from './components/servants/servants-create/servants-create.component';
 import { AlertComponent } from './components/alert/alert.component';
 
 import { PhoneNumberPipe } from './shared/pipes/phone-number.pipe';
@@ -34,6 +35,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 
@@ -53,6 +55,7 @@ import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
     DonationsEditModalComponent,
     ServantsCrudComponent,
     ServantsReadComponent,
+    ServantsCreateComponent,
     AlertComponent,
     PhoneNumberPipe,
   ],
@@ -72,6 +75,7 @@ import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
     MatCheckboxModule,
     MatDialogModule,
     MatSnackBarModule,
+    MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
     NgxMaskDirective,

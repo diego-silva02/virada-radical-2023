@@ -1,0 +1,75 @@
+<mat-card class="container mt-4">
+    <mat-card-title class="create-title">Novo Servo</mat-card-title>
+
+    <form [formGroup]="formGroup" class="pt-4">
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Nome*" formControlName="name">
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Número de telefone" formControlName="phoneNumber" prefix="(085) " mask="00000-0000">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Centro de Evangelização" formControlName="cev">
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Grupo de oração/Célula" formControlName="prayerGroup">
+                </mat-form-field>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <mat-label>Serviço</mat-label>
+                    <mat-select formControlName="service">
+                        <mat-option *ngFor="let service of servicesList" [value]="service.value">{{ service.viewValue }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="col-4" *ngIf="formGroup.value.service == 'outro'">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Qual serviço?" (change)="changeOtherService($event)">
+                </mat-form-field>
+            </div>
+
+            <div class="col-2">
+                <mat-form-field class="w-100">
+                    <input matInput placeholder="Idade" formControlName="age" mask="00">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row pb-3">
+            <mat-checkbox formControlName="wasPaid">Foi pago?</mat-checkbox>
+        </div>
+
+        <div class="row" *ngIf="formGroup.value.wasPaid">
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Qual valor foi pago?" formControlName="valuePaid" [dropSpecialCharacters]="false" prefix="R$ " mask=" 000||000,00">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Outras observações" formControlName="otherThings">
+            </mat-form-field>
+        </div>
+    </form>
+
+    <div class="row d-flex justify-content-end py-2">
+        <button mat-raised-button class="btn-save col-1" (click)="createServant()" color="primary">Salvar</button>
+        <button mat-raised-button class="btn-back col-1" (click)="back()">Voltar</button>
+    </div>
+</mat-card>
