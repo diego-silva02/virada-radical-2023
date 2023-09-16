@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col-10">
+      <mat-form-field class="pt-4 w-100">
+          <mat-label>Filtro</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Digite aqui o filtro" #input>
+      </mat-form-field>
+    </div>
+  
+    <!-- redirect to create servant component -->
+    <div class="col-2">
+      <button mat-raised-button class="servants-button w-100" routerLink="/servos/novo">Novo Participante</button>
+    </div>
+  </div>
+    
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nome </th>
+        <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
+      </ng-container>
+    
+      <!-- Age Column -->
+      <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef> Idade </th>
+        <td mat-cell *matCellDef="let element"> {{ element.age }} </td>
+      </ng-container>
+    
+      <!-- Phone Number Column -->
+      <ng-container matColumnDef="phoneNumber">
+        <th mat-header-cell *matHeaderCellDef> Número de telefone </th>
+        <td mat-cell *matCellDef="let element"> {{ element.phoneNumber | phoneNumber }} </td>
+      </ng-container>
+  
+      <!-- Was Paid Column -->
+      <ng-container matColumnDef="wasPaid">
+          <th mat-header-cell *matHeaderCellDef> Pago </th>
+          <td mat-cell *matCellDef="let element"> {{ element.wasPaid == true ? 'Sim' : 'Não' }} </td>
+      </ng-container>
+  
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Ações </th>
+        <td mat-cell *matCellDef="let element">
+          <img src="../../../../assets/svgs/pencil.svg" alt="pencil" (click)="editServant(element)" role="button">
+          <a mwlConfirmationPopover
+          [popoverMessage]="'Deseja realmente remover?'"
+          placement="top"
+          confirmText="Confirmar"
+          cancelText="Cancelar"
+          (confirm)="deleteServant(element.id)">
+            <img src="../../../../assets/svgs/trash.svg" alt="trash" class="mx-3" role="button">
+          </a>
+      </td>
+    </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">Sem dados para o filtro correspondente "{{ input.value }}"</td>
+      </tr>
+  </table>

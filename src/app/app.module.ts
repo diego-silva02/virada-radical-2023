@@ -16,6 +16,8 @@ import { DonationsCrudComponent } from './views/donations-crud/donations-crud.co
 import { DonationsReadComponent } from './components/donations/donations-read/donations-read.component';
 import { DonationsCreateModalComponent } from './components/donations/donations-create-modal/donations-create-modal.component';
 import { DonationsEditModalComponent } from './components/donations/donations-edit-modal/donations-edit-modal.component';
+import { ServantsCrudComponent } from './views/servants-crud/servants-crud.component';
+import { ServantsReadComponent } from './components/servants/servants-read/servants-read.component';
 import { AlertComponent } from './components/alert/alert.component';
 
 import { PhoneNumberPipe } from './shared/pipes/phone-number.pipe';
@@ -44,13 +46,15 @@ import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
     ParticipantsCrudComponent,
     ParticipantsReadComponent,
     ParticipantsCreateComponent,
-    PhoneNumberPipe,
     ParticipantsEditComponent,
     DonationsCrudComponent,
     DonationsReadComponent,
     DonationsCreateModalComponent,
     DonationsEditModalComponent,
+    ServantsCrudComponent,
+    ServantsReadComponent,
     AlertComponent,
+    PhoneNumberPipe,
   ],
   imports: [
     BrowserModule,

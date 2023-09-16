@@ -7,6 +7,8 @@ import { ParticipantsCreateComponent } from './components/participants/participa
 import { ParticipantsEditComponent } from './components/participants/participants-edit/participants-edit.component';
 import { DonationsCrudComponent } from './views/donations-crud/donations-crud.component';
 import { DonationsReadComponent } from './components/donations/donations-read/donations-read.component';
+import { ServantsCrudComponent } from './views/servants-crud/servants-crud.component';
+import { ServantsReadComponent } from './components/servants/servants-read/servants-read.component';
 
 const routes: Routes = [{
     path: "",
@@ -19,6 +21,9 @@ const routes: Routes = [{
   ]},
   { path: "doacoes", component: DonationsCrudComponent, children: [
     { path: "tabela", component: DonationsReadComponent }
+  ]},
+  { path: "servos", component: ServantsCrudComponent, children: [
+    { path: "tabela", component: ServantsReadComponent }
   ]}
 ];
 
