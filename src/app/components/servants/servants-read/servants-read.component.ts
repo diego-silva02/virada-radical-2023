@@ -43,16 +43,16 @@ export class ServantsReadComponent {
   }
 
   deleteServant(id: number): void {
-    // this.participantsService.delete(id).subscribe({
-    //   next: () => {
-    //     this.alertService.showMessage('Participante removido, rezemos mais!', 'success');
-    //     this.loadParticipants();
-    //    },
-    //    error: (ex) => {
-    //     this.alertService.showMessage('Um erro ocorreu, Vish!', 'error');
-    //     console.log(ex);
-    //    }
-    // })
+    this.servantsService.delete(id).subscribe({
+      next: () => {
+        this.alertService.showMessage('Servo removido, rezemos mais!', 'success');
+        this.loadServants();
+       },
+       error: (ex) => {
+        this.alertService.showMessage('Um erro ocorreu, Vish!', 'error');
+        console.log(ex);
+       }
+    })
   }
 
 }
